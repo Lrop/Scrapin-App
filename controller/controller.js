@@ -107,9 +107,9 @@ router.get("/readArticle/:id", function(req, res) {
         request(link, function(error, response, html) {
           var $ = cheerio.load(html);
 
-          $(".l-col__main").each(function(i, element) {
+          $(".column--primary").each(function(i, element) {
             hbsObj.body = $(this)
-              .children(".c-entry-content")
+              .children(".story-body_inner")
               .children("p")
               .text();
 
