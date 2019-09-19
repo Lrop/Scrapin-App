@@ -4,16 +4,24 @@ body {
 
 .card {
     position: relative;
-    margin: 0.5rem 0 1rem 0;
+    /* margin: 0.5rem 0 1rem 0; */
     background-color: #fff;
     transition: box-shadow .25s;
     border-radius: 2px;
+    margin-right: 180px;
+    margin-left: 180px;
+    font-size: 45px;
+    font-family: 'Alfa Slab One', cursive;
+    color: yellow;
+    text-shadow: -1px 0 black, 0 4px black, 4px 0 black, 0 -1px black;
 }
 
 nav .nav-wrapper {
     position: relative;
     height: 100%;
     background-color: black;
+    font-family: 'Alfa Slab One', cursive;
+    text-shadow: -1px 0 black, 0 4px black, 4px 0 black, 0 -1px black;
 }
 
 .card-panel {
@@ -24,6 +32,8 @@ nav .nav-wrapper {
     background-color: #fff;
     box-shadow: 0px 0px 2px 2px;
     text-align: center;
+    margin-right: 167px;
+    margin-left: 167px;
 }
 
 h4 {
@@ -39,4 +49,7 @@ h4 {
     /* left: auto; */
     /* right: auto; */
     margin: auto;
+}
+body {
+    background-color: white;
 }
