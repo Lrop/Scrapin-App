@@ -12,14 +12,6 @@ var request = require("request");
 var express = require("express");
 var app = express ();
 
-
-// app.use(logger("dev"));
-// app.use(
-//     bodyParser.urlencoded({
-//         extended: false
-//     })
-// );
-
 // Path for Public Folder
 app.use(express.static(process.cwd() + "/public"));
 
@@ -31,8 +23,6 @@ db.on("error", console.error.bind( console, "connection fail"));
 db.once("open", function(){
     console.log("Connected to Mongoose");
 });
-
-
 
 // Setting app engine 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -57,10 +47,5 @@ app.listen(port, function() {
 });
 
 
-// Setting up Port
-// var port = process.env.PORT || 3000;
-// app.listen(port, function () {
-//     console.log("Listening on " + " http://localhost:3000");
-// });
 
 
