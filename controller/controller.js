@@ -89,37 +89,6 @@ router.get("/clearAll", function(req, res) {
   res.redirect("/");
 });
 
-router.get("/readArticle/:id", function(req, res) {
-  var articleId = req.params.id;
-  var hbsObj = {
-    article: [],
-    body: []
-  };
-
-  Article.findOne({ _id: articleId })
-    .populate("comment")
-    .exec(function(err, doc) {
-      if (err) {
-        console.log("Error: " + err);
-      } else {
-        hbsObj.article = doc;
-        var link = doc.link;
-        request(link, function(error, response, html) {
-          var $ = cheerio.load(html);
-
-          $(".column--primary").each(function(i, element) {
-            hbsObj.body = $(this)
-              .children(".story-body_inner")
-              .children("p")
-              .text();
-
-            res.render("article", hbsObj);
-            return false;
-          });
-        });
-      }
-    });
-});
 
 
 module.exports = router;
