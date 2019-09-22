@@ -1,18 +1,21 @@
 body {
     color: black;
+    background: url(./img/news.jpg);
+    /* background-size: cover; */
 }
 
 .card {
     position: relative;
     /* margin: 0.5rem 0 1rem 0; */
-    background-color: #fff;
-    transition: box-shadow .25s;
+    background-color: black;
+    /* transition: box-shadow .25s; */
     border-radius: 2px;
-    margin-right: 180px;
-    margin-left: 180px;
+    /* margin-right: 180px; */
+    /* margin-left: 180px; */
     font-size: 45px;
     font-family: 'Alfa Slab One', cursive;
     color: yellow;
+
     text-shadow: -1px 0 black, 0 4px black, 4px 0 black, 0 -1px black;
 }
 
@@ -52,4 +55,18 @@ h4 {
 }
 body {
     background-color: white;
+}
+.container-two {
+    color: white;
+    background: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+nav .brand-logo.center {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 41px;
 }

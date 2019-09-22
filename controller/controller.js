@@ -86,7 +86,7 @@ router.get("/clearAll", function(req, res) {
       console.log("removed all articles");
     }
   });
-  res.redirect("/articles-json");
+  res.redirect("/");
 });
 
 router.get("/readArticle/:id", function(req, res) {
@@ -120,38 +120,6 @@ router.get("/readArticle/:id", function(req, res) {
       }
     });
 });
-router.post("/comment/:id", function(req, res) {
-  var user = req.body.name;
-  var content = req.body.comment;
-  var articleId = req.params.id;
 
-  var commentObj = {
-    name: user,
-    body: content
-  };
-
-  var newComment = new Comment(commentObj);
-
-  newComment.save(function(err, doc) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(doc._id);
-      console.log(articleId);
-
-      Article.findOneAndUpdate(
-        { _id: req.params.id },
-        { $push: { comment: doc._id } },
-        { new: true }
-      ).exec(function(err, doc) {
-        if (err) {
-          console.log(err);
-        } else {
-          res.redirect("/readArticle/" + articleId);
-        }
-      });
-    }
-  });
-});
 
 module.exports = router;

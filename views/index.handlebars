@@ -1,5 +1,5 @@
 <div>
-    <h1 class="card z-depth-3 center align">Read the Latest News Articles </h1>
+    <h1 class="card z-depth-3 center align">The BBC News Scraper </h1>
     <div class="row">
         <div class="col s3"></div>
         <h5 class="card z-depth-3 center align col s6"></h5>
@@ -10,8 +10,14 @@
         {{#each article}}
         <div class="card-panel">
             <h4>{{this.title}}</h4>
-            <a href="/readArticle/{{this.id}}" class="wave-effect" id="btn">READ ARTICLE</a>
+            {{!-- <h5>{{this.link}}</h5> --}}
+            <h5>{{this.summary}}</h5>
+            <a href="{{this.link}}" class="wave-effect" id="btn" target="_blank">READ ARTICLE</a>
+            <br>
+            <br>
+            <button>Save Article
 
+            </button>
         </div>
 
         {{/each}}
